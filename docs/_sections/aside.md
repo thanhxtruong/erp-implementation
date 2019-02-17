@@ -3,24 +3,33 @@
 include: sections/aside.html
 ---
 {:#heading-override}
-## Objective:
+#### Objective:
 
 {:#text-override }
 Develop and configure several quality modules in the ERP system to convert the current paper system to an electronic workflow-based system.
 
 {:#heading-override}
-## Technical Wrap-up:
+#### Technical Wrap-up:
 
 {:#text-override }
-* ERP system (IQMS)
-* Workflow and electronic signatures
+* ERP System (IQMS)
+* Workflow and Electronic Signatures
 * Crystal Reports
 
 {:#heading-override}
-## Achievement:
+#### Achievements:
+
+{:#text-override }
+* Improved turn-around time for deviation approval with the use of broadcast workflow.
+* Improved accuracy in tracking expired deviations with automatic daily alert of upcoming expiration dates.
+* Crystal Reports
 
 {:#heading-override}
-## Skills:
+#### Skills:
 
 {:#heading-override}
-## Systems Developed:
+#### Systems Developed:
+
+{:#text-override }
+1. Deviation system for requesting and issuing temporary deviations.
+
