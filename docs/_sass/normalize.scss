@@ -40,16 +40,10 @@ main,
 menu,
 nav,
 section,
+aside,
+article,
 summary {
   display: block;
-}
-
-aside {
-  float: left;
-}
-
-article {
-  float: right;
 }
 
 /**
