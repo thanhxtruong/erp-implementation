@@ -2,9 +2,9 @@
 layout: default
 ---
 {:#heading-override}
-## How I Solved the Problem:
+### How I Solved the Problem:
 
-{:#text-override }
+{:#text-override-article }
 1.	Met with stakeholders to develop business requirements for the new system.
 2.	Created process flow diagram for the new process.<br>
 <a href="/images/workflow.pdf" target="_blank"><img src="/images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"><img src="/images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"></a>
