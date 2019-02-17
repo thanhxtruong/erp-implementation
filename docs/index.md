@@ -7,7 +7,7 @@ layout: default
 {:#text-override-article }
 1.	Met with stakeholders to develop business requirements for the new system.
 2.	Created process flow diagram for the new process.<br>
-<a href="/images/workflow.pdf" target="_blank"><img src="/images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"><img src="/images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"></a>
+<a href="images/workflow.pdf" target="_blank"><img src="images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"><img src="/images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"></a>
 
 3.	Presented and obtain approval for the new system design.
 4.	Set up the workflow templates per the approved process flow.<br>
