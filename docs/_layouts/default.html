@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
@@ -52,6 +53,7 @@
                 <li>ERP System (IQMS)</li>
                 <li>Workflow and Electronic Signatures</li>
                 <li>Crystal Reports</li>
+                <li>Database Management (Oracle Database)</li>
               </ul>
   
               <h5>Systems Developed:</h5>
@@ -90,76 +92,73 @@
                 <ol>
                   <li>Met with stakeholders to develop business requirements for the new system.</li>
                   <li>Created process flow diagram for the new process.<br>
-                    <a href="images/workflow.pdf" target="_blank"><img src="images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"><img src="images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"></a>
-                  </li>
+                    <a href="images/workflow.pdf" target="_blank"><img src="images/workflow_Part1.png" width="400" class="img-thumbnail" title="Flowchart" alt="Flowchart"><img src="images/workflow_Part1.png" width="400" class="img-thumbnail" title="Flowchart" alt="Flowchart"></a>
+                  </li><br>
                   <li>Presented and obtain approval for the new system design.</li>
                   <li>Set up the workflow templates per the approved process flow.<br>
-                    <a href="images/wftemplate.PNG" target="_blank"><img src="images/wftemplate.PNG" width="400" title="Alert" alt="Alert"></a><br>
-                  </li>
+                    <a href="images/wftemplate.PNG" target="_blank"><img src="images/wftemplate.PNG" width="400" class="img-thumbnail" title="Alert" alt="Alert"></a><br>
+                  </li><br>
                   <li>Created reports using Crystal Report.<br>
-                    <a href="images/crystal_report.PNG" target="_blank" class="align-text-top"><img src="images/crystal_report.PNG" width="400" title="Crystal Report" alt="Crystal Report"></a><a href="images/example_report.pdf" target="_blank"><img src="images/example_report.png" width="400" title="Example Report" alt="Example Report"></a><br>
-                  </li>
+                    <p><em>Detailed description of this aspect of the projects can be found on the next page.</em></p>
+                    <a href="images/crystal_report.PNG" target="_blank"><img src="images/crystal_report.PNG" width="400"  class="align-top img-thumbnail" title="Crystal Report" alt="Crystal Report"></a><a href="images/example_report.pdf" target="_blank"><img src="images/example_report.png" width="400" class="img-thumbnail" title="Example Report" alt="Example Report"></a><br>
+                  </li><br>
                   <li>Created daily/weekly automatic alert to help users keep track of due dates.<br>
-                    <a href="images/alert.PNG" target="_blank"><img src="images/alert.PNG" width="400" title="Alert" alt="Alert"></a><br>
-                  </li>
+                    <a href="images/alert.PNG" target="_blank"><img src="images/alert.PNG" width="400" class="img-thumbnail" title="Alert" alt="Alert"></a><br>
+                  </li><br>
                   <li>Wrote and executed testing protocols.</li>
                   <li>Created work instructions and trained users to the new system.</li>
                 </ol>
               </div>
 
               <!-- Page 2 of Pagination -->
-              <div class="content">
-                <h3>Execution:</h3>
-                <ol>
-                  <li>
-                    <strong>Challenge #1:</strong><br>
-                    <p><em>How to design an algorithm to display appointments in a calendar by month?</em></p>
-                    <a href="images/calendar_month.PNG" target="_blank"><img width="200" src="images/calendar_month.PNG" alt="Appoinment By Month"></a><br><br>
-
-                    <blockquote>                      
-                      <strong>Solution:</strong>
-                      <ul>
-                        <li>Add a VBox to each grid inside the GridPane to properly align ComboBox used for appointment lists and label used for displaying each date in the selected month.</li>
-
-                        <li>Download all appointments from the database and map them by months then by dates in a month (2-layer map). Iterate over the map by dates to add lists of appointments to ComboBoxes.</li>
-                      </ul>
-                    </blockquote>
-
-                    <div class="gistcontainer" id="gist1">
-                      <a href="#gist1" class="show">Expand</a>
-                      <script src="https://gist.github.com/thanhxtruong/3a73e4e10d49955ecc70942ab00b524b.js"></script>
-                    </div><br>
-                  </li>
-                  
-                  <li>
-                      <strong>Challenge #2:</strong><br>
-                      <p><em>How to design an algorithm to display appointments by week with overlapped time between grids?</em></p>
-                      <a href="images/calendar_week.PNG" target="_blank"><img width="200" src="images/calendar_week.PNG" alt="Appoinment By Week"></a><br><br>
-
-                      <blockquote> 
-                          <strong>Solution:</strong>
-                          <ul>
-                            <li>Anchor Labels with appointment details to AnchorPanes added to GridPane. The number of rowspan is determined based on the number of appointment hours.</li>
-    
-                            <li>For appointments starting/ending at non-zero minutes, the top and bottom anchor values for the Label are set based on the startMin and endMin</li>
-                          </ul>
-                        </blockquote>
-
-                        <div class="gistcontainer" id="gist1">
-                            <a href="#gist1" class="show">Expand</a>
-                            <script src="https://gist.github.com/thanhxtruong/da9f90fbabcea06afee37ce587166c98.js"></script>
-                          </div>
-                  </li>
-                </ol>
+              <div id="page-2" class="content">
+                <h3>Crystal Report:</h3>
+                <p>The next few pages describe a few examples of how I solved challenges in developing the report for the Quick Inspection module. The Entity Relationship Diagram (ERD) for the report is shown below:</p>
+                <a href="images/crystaldb.PNG" target="_blank"><img src="images/crystaldb.PNG" width="600" class="img-thumbnail" title="Entity Relationship Diagram" alt="Entity Relationship Diagram"></a><br>                
               </div>
 
               <!-- Page 3 of Pagination -->
               <div class="content">
-                <h3>Final Product:</h3>
-                <video class="video-custom" controls width="800">
-                  <source src="images/MasterSchedulerDemo.mp4" type="video/mp4">
-                </video>
+                <h3>Challenge #1:</h3>
+                <p><em>The manufacturer-provided report takes up too much space resulting in unnecessary paper waste due to the report layout. How to re-design the layout to mimic the report in the current paper system that is more user-friendly and economical?</em></p>
+                    <a href="images/iqms_report.pdf" target="_blank"><img width="400" class="img-thumbnail" src="images/iqms_report.png" alt="Manufacturer-provided Report"></a><br><br>
+                    <blockquote>                      
+                      <strong>Solution:</strong>
+                      <p> With the use of the <strong><em>“Format Groups with Multiple Columns”</em></strong> feature in Crystal Report allowing printing repeated columns horizontally, the improved layout as shown below has reduced the number of pages significantly (from 9 pages total to 3 pages total for the same record).</p>
+                    </blockquote>
+                    <a href="images/inspection_report.pdf" target="_blank"><img width="400" class="img-thumbnail" src="images/spc_report.png" alt="Final Report Design"></a><br><br>
+
+                    
               </div>
+
+              <!-- Page 4 of Pagination -->
+              <div class="content">
+                  <h3>Challenge #2:</h3>
+                  <p><em>It is a requirement that Inspectors’ names, GageID’s (Measurement Equipment ID), and Inspection Notes are printed on the report. However, names and ID are mostly duplicate data entries and are only changed when multiple inspectors performed the inspection. Similarly, Inspection Notes are to be recorded per sample (row) only as necessary. How to print these data on the report without compromising the ability to use the <strong><em>“Format Groups with Multiple Columns”</em></strong> feature described in the previous page?</em></p>
+                  <p>Below is a picture of what the table would look like with the additional columns. It is no longer possible to fit 3 repeated columns in the table. </p>
+                      <a href="images/iqms_gage.PNG" target="_blank"><img width="400" class="img-thumbnail" src="images/iqms_gage.PNG" alt="Table With Additional Columns"></a><br><br>
+                      <blockquote>                      
+                        <strong>Solution:</strong>
+                        <p>Use the <strong><em>“WhilePrintingRecords”</em></strong> function in Crystal Report to capture the data for each row printed and store them in a variable using String concatenation operator. For data with duplicate entries, use the <strong><em>“In”</em></strong> String operator in a conditional <strong><em>“if-then”</em></strong> statement to filter out duplicate records. The filtered and concatenated data is then printed in the group footer section of the report as shown below.</p>
+                      </blockquote>
+                      <a href="images/concatenate.png" target="_blank"><img width="400" class="img-thumbnail" src="images/concatenate.png" alt="Final Report Design"></a><br><br>
+  
+                      <div class="gistcontainer" id="gist1">
+                        <a href="#gist1" class="show">Expand</a>
+                        <script src="https://gist.github.com/thanhxtruong/13450a54e757cafffbb5678b102c8cdd.js"></script>
+                      </div><br>
+                </div>
+
+                <!-- Page 5 of Pagination -->
+              <div class="content">
+                  <h3>Challenge #3:</h3>
+                  <p><em>One of the challenges with the new system during the trial period was the lack of visibility for nonconforming data (measurements that are outside of the acceptable ranges or recorded as “FAIL”). How to improve visibility to these records to prevent shipping nonconforming product to the customer?</p>
+                      <blockquote>                      
+                        <strong>Solution:</strong>
+                        <p>Use conditional formatting to highlight the data if outside of acceptable range or “FAIL”.</p>
+                      </blockquote>
+                      <a href="images/conditional_format.png" target="_blank"><img width="400" class="img-thumbnail" src="images/conditional_format.png" alt="Conditional Formatting"></a><br><br>
+                </div>
               
               </div> <!-- end of Pagination -->
             
@@ -193,4 +192,5 @@
         <span class="site-footer-credits">This page was generated by <a id="a-override" href="https://pages.github.com">GitHub Pages</a>.</span>
       </footer>
   </body>
+    <script src="paging.js"></script>
 </html>
