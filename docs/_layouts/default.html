@@ -38,22 +38,152 @@
 
     <main>
       <div>
-        <div class="row">
-          <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 pl-5">
-              {% assign sections = site.sections | sort: 'order' %}
-                {% for section in sections %}
-                  {% if section.include != null %}
-                    {% include {{ section.include }} %}
-                  {% else %}
-                    {% include sections/default.html %}
-                  {% endif %}
-                {% endfor %}
-          </div>
-          <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9 pl-5">
-            {{content}}
-          </div>          
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 main-content">
+  
+              <!--Aside-->
+              <h5>Objective:</h5>
+              <p id="text-override-aside">
+                Develop and configure several quality modules in the ERP system to convert the current paper system to an electronic workflow-based system.              
+              </p>
+  
+              <h5>Technical Wrap-up:</h5>
+              <ul id="text-override-aside">
+                <li>ERP System (IQMS)</li>
+                <li>Workflow and Electronic Signatures</li>
+                <li>Crystal Reports</li>
+              </ul>
+  
+              <h5>Systems Developed:</h5>
+              <ul id="text-override-aside">
+                  <li>Deviation system for requesting and issuing temporary deviations.</li>
+                  <li>CAR system for tracking and documenting customer complaints and corrective actions.</li>
+                  <li>MRB (Material Review Board) system for review and approval of nonconforming product disposition.</li>
+                  <li>Quick Inspection system for capturing inspection data.</li>
+              </ul>
+
+              <h5>Achievements:</h5>
+              <ul id="text-override-aside">
+                <li>Standardized the new processes with the use of electronic workflow.</li>
+                <li>Improved turn-around time for deviation approval with the use of broadcast workflow (Deviation system).</li>
+                <li>Improved accuracy in tracking expired deviations with automatic daily alert of upcoming expiration dates (Deviation system).</li>
+                <li>Improved timely response for MRB review and approval, which improved the turn-around time for nonconforming product disposition (MRB system).</li>
+                <li>Integrated the RMA process with the MRB process to streamline disposition of RMA materials (MRB system).</li>
+                <li>Improved data mining to generate KPI used in management review.</li>
+                <li>Improved overall timeliness (<a href="images/metrics.pdf" target="_blank">see metrics</a>) in closing out complaints and corrective actions as well as on-time submission (CAR system).</li>
+              </ul>
+
+              <h5>Responsibilities:</h5>
+              <ul id="text-override-aside">
+                <li>System design, configuration, implementation, and training</li>
+                <li>Technical support and system maintenance</li>
+              </ul>
+          </div> <!--end of first col-->
+  
+          <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9 main-content">
+            <!-- Start of Pagination -->
+            <div class="contents">
+
+              <!--Page 1-->
+              <div class="content">
+                <h3>How I Managed the Project:</h3>
+                <ol>
+                  <li>Met with stakeholders to develop business requirements for the new system.</li>
+                  <li>Created process flow diagram for the new process.<br>
+                    <a href="images/workflow.pdf" target="_blank"><img src="images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"><img src="images/workflow_Part1.png" width="400" title="Flowchart" alt="Flowchart"></a>
+                  </li>
+                  <li>Presented and obtain approval for the new system design.</li>
+                  <li>Set up the workflow templates per the approved process flow.<br>
+                    <a href="images/wftemplate.PNG" target="_blank"><img src="images/wftemplate.PNG" width="400" title="Alert" alt="Alert"></a><br>
+                  </li>
+                  <li>Created reports using Crystal Report.<br>
+                    <a href="images/crystal_report.PNG" target="_blank" class="align-text-top"><img src="images/crystal_report.PNG" width="400" title="Crystal Report" alt="Crystal Report"></a><a href="images/example_report.pdf" target="_blank"><img src="images/example_report.png" width="400" title="Example Report" alt="Example Report"></a><br>
+                  </li>
+                  <li>Created daily/weekly automatic alert to help users keep track of due dates.<br>
+                    <a href="images/alert.PNG" target="_blank"><img src="images/alert.PNG" width="400" title="Alert" alt="Alert"></a><br>
+                  </li>
+                  <li>Wrote and executed testing protocols.</li>
+                  <li>Created work instructions and trained users to the new system.</li>
+                </ol>
+              </div>
+
+              <!-- Page 2 of Pagination -->
+              <div class="content">
+                <h3>Execution:</h3>
+                <ol>
+                  <li>
+                    <strong>Challenge #1:</strong><br>
+                    <p><em>How to design an algorithm to display appointments in a calendar by month?</em></p>
+                    <a href="images/calendar_month.PNG" target="_blank"><img width="200" src="images/calendar_month.PNG" alt="Appoinment By Month"></a><br><br>
+
+                    <blockquote>                      
+                      <strong>Solution:</strong>
+                      <ul>
+                        <li>Add a VBox to each grid inside the GridPane to properly align ComboBox used for appointment lists and label used for displaying each date in the selected month.</li>
+
+                        <li>Download all appointments from the database and map them by months then by dates in a month (2-layer map). Iterate over the map by dates to add lists of appointments to ComboBoxes.</li>
+                      </ul>
+                    </blockquote>
+
+                    <div class="gistcontainer" id="gist1">
+                      <a href="#gist1" class="show">Expand</a>
+                      <script src="https://gist.github.com/thanhxtruong/3a73e4e10d49955ecc70942ab00b524b.js"></script>
+                    </div><br>
+                  </li>
+                  
+                  <li>
+                      <strong>Challenge #2:</strong><br>
+                      <p><em>How to design an algorithm to display appointments by week with overlapped time between grids?</em></p>
+                      <a href="images/calendar_week.PNG" target="_blank"><img width="200" src="images/calendar_week.PNG" alt="Appoinment By Week"></a><br><br>
+
+                      <blockquote> 
+                          <strong>Solution:</strong>
+                          <ul>
+                            <li>Anchor Labels with appointment details to AnchorPanes added to GridPane. The number of rowspan is determined based on the number of appointment hours.</li>
+    
+                            <li>For appointments starting/ending at non-zero minutes, the top and bottom anchor values for the Label are set based on the startMin and endMin</li>
+                          </ul>
+                        </blockquote>
+
+                        <div class="gistcontainer" id="gist1">
+                            <a href="#gist1" class="show">Expand</a>
+                            <script src="https://gist.github.com/thanhxtruong/da9f90fbabcea06afee37ce587166c98.js"></script>
+                          </div>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- Page 3 of Pagination -->
+              <div class="content">
+                <h3>Final Product:</h3>
+                <video class="video-custom" controls width="800">
+                  <source src="images/MasterSchedulerDemo.mp4" type="video/mp4">
+                </video>
+              </div>
+              
+              </div> <!-- end of Pagination -->
+            
+            <!-- Start of Pagination nav -->
+            <div>
+                <nav class="text-center">
+                    <ul class="pagination justify-content-end">
+                        <li class="pag_prev">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="pag_next">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>              
+            </div> <!--end of Pagination nav--> 
+
+          </div> <!--end of second col-->         
+        </div> <!--end of row-->
+      </div> <!--end of main div-->
     </main>
 
     <footer class="site-footer">
